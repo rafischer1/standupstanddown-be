@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const passport = require('passport');
 const jwt = require('jsonwebtoken')
-const callback = "/github/callback";
+const callback = "/auth/github/callback";
 
 
 // auth with github
