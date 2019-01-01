@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const passport = require('passport');
 const jwt = require('jsonwebtoken')
-const callback = "/auth/github/callback";
+const callback = "/github/callback";
 
 
 // auth with github
@@ -26,7 +26,7 @@ router.get(callback, passport.authenticate('github'), (req, res) => {
   res.cookie("token", token, {
     expires: new Date(Date.now() + 900000 * 4 * 24) // 24 hours
   })
-  res.redirect("https://standup-fischer.herokuapp.com/");
+  res.redirect("http://standup-fischer.herokuapp.com/");
 });
 
 module.exports = router;
